@@ -61,7 +61,7 @@ export default function WorkPage() {
 
   const exprerienceItems = [
     {
-      title: "May 2024 - Jun 2024",
+      title: "May 2024 - Aug 2024",
     },
     {
       title: "Jan 2024 - May 2024",
