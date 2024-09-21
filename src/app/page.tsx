@@ -3,7 +3,7 @@ import Link from "next/link";
 import { MoveDown, MoveRight } from "lucide-react";
 export default function Home() {
   return (
-    <div className="relative">
+    <div className="relative text-white">
         <Navbar  />  
       <main className="flex flex-col min-h-screen relative max-w-[1000px] mx-auto bg-black">
         <div className="mx-auto text-4xl font-inter font-light tracking-wider mt-[25vh] md:mt-[35vh]">

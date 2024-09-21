@@ -18,12 +18,12 @@ export default function WorkPage() {
   const [activeTab, setActiveTab] = useState(Tab.EXPERIENCE);
 
   const experienceContent = [
-    <div className="text-left w-full p-4 font-inter" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null}>
       <h3 className="font-bold text-xl">Full Stack Software Development Intern</h3>
       <h4 className="font-semibold text-base mb-2">@ <a href="https://draftparty.net" className="text-gray-300 hover:text-white underline" target="_blank">Draft Party</a></h4>
       <p className="font-extralight">
         Worked as a full stack software development intern at Draft Party, a startup that creates trivia games played in a sports draft format targeted for corporate team-building.
-        <ul className="list-inside list-disc pl-4 pt-2">
+        <ul className="list-inside list-disc pl-4 pt-2 text-white">
           <li>Developed the backend for the Daily Game feature using Cloudflare Workers and Durable Objects</li>
           <li>Created 20+ REST API endpoints using Typescript and Node.js, including thorough unit testing using Jest</li>
           <li>Designed and implemented a user dashboard as well as login/signup flow on the frontend using Vue/Nuxt/Tailwind CSS/Typescript</li>
@@ -31,7 +31,7 @@ export default function WorkPage() {
         </ul>
       </p>
     </div>,
-    <div className="text-left w-full p-4 font-inter" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null}>
       <h3 className="font-bold text-xl">Jr. Part-time Frontend Software Developer</h3>
       <h4 className="font-semibold text-base mb-2">@ <a href="https://draftparty.net" className="text-gray-300 hover:text-white underline" target="_blank">Draft Party</a></h4>
       <p className="font-extralight">
@@ -43,7 +43,7 @@ export default function WorkPage() {
         </ul>
       </p>
     </div>,  
-    <div className="text-left w-full p-4 font-inter" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null}>
       <h3 className="font-bold text-xl">Avionics/Software Developer</h3>
       <h4 className="font-semibold text-base mb-2">@ <a href="https://www.utat.ca/rocketry" className="text-gray-300 hover:text-white underline" target="_blank">University of Toronto Aerospace Team - Rocketry Division</a></h4>
       <p className="font-extralight">
@@ -72,7 +72,7 @@ export default function WorkPage() {
   ];
 
   const projectContent = [
-    <div className="text-left w-full p-4 font-inter" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null}>
       <h3 className="font-bold text-xl mb-4">Complete Breadboard CPU and Custom Instruction Set</h3>
       <p className="font-extralight">
         Designed an implemented a custom CPU on a breadboard, mainly using 74LS series ICs. This project includes:
@@ -85,7 +85,7 @@ export default function WorkPage() {
         </ul>
       </p>
     </div>,
-    <div className="text-left w-full p-4 font-inter" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null}>
       <h3 className="font-bold text-xl mb-4">Krumbz Recipe App: Recipe Searcher</h3>
       <p className="font-extralight">
         Created an app where users can see what recipes they can make, based on the ingredients they have. Some features include:
@@ -100,7 +100,7 @@ export default function WorkPage() {
         </ul>
       </p>
     </div>,
-    <div className="text-left w-full p-4 font-inter" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null}>
       <h3 className="font-bold text-xl mb-4">Rocket Projectile Simulator</h3>
       <p className="font-extralight">
         Created a physics-accurate projectile simulator disguised as a rocket game. This was directly implemented on a soft-core processor on an FPGA, with no operating system. Some details:
@@ -114,7 +114,7 @@ export default function WorkPage() {
         </ul>
       </p>
     </div>,
-    <div className="text-left w-full p-4 font-inter" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null}>
       <h3 className="font-bold text-xl mb-4">FPGA Human BenchMmark Games Project</h3>
       <p className="font-extralight">
         Designed a series of interactive games inspired by <a href="https://www.humanbenchmark.com/" className="underline text-gray-400 hover:text-white">Human Benchmark</a>. 
@@ -146,7 +146,7 @@ export default function WorkPage() {
   return (
     <div>
       <Navbar />  
-      <main className="flex min-h-screen flex-col">
+      <main className="flex min-h-screen flex-col bg-black text-white">
           <div className="flex justify-center align-middle mb-20 mt-16">
             <button onClick={() => {setActiveTab(Tab.EXPERIENCE);}} className={`px-4 py-2 rounded-l-full ${activeTab === Tab.EXPERIENCE ? "bg-white text-black" : "bg-black"} border-2 border-white`}>experience</button>
             <button onClick={() => setActiveTab(Tab.PROJECTS)} className={`px-4 py-2 rounded-r-full ${activeTab === Tab.PROJECTS ? "bg-white text-black" : "bg-black"} border-2 border-white`}>projects</button>
