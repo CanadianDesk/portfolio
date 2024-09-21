@@ -47,7 +47,7 @@ export default function WorkPage() {
       <h3 className="font-bold text-xl">Avionics/Software Developer</h3>
       <h4 className="font-semibold text-base mb-2">@ <a href="https://www.utat.ca/rocketry" className="text-gray-300 hover:text-white underline" target="_blank">University of Toronto Aerospace Team - Rocketry Division</a></h4>
       <p className="font-extralight">
-        Was a member of the avionics/software on the University Rocketry Team. Was responsible for maintaining/developing software uesd to aid in the design and launch of rockets.
+        Was a member of the avionics/software on the University Rocketry Team. Was responsible for maintaining/developing software used to aid in the design and launch of rockets.
         <ul className="list-inside list-disc pl-4 pt-2">
           <li>Communicated with a team of approximately 20 people to develop avionics/software solutions to aid the successful launch of an experimental hybrid-fuelled rocket</li>
           <li>Developed a headless C/C++ Linux application that is responsible for driving signals to GPIO pins in order to actuate and read from different sensors in the fuelling system</li>
