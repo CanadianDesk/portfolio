@@ -17,7 +17,7 @@ export default function Home() {
         <p className="font-thin mx-8 my-6">
           Hi! I&apos;m currently a Computer Engineering student at the Unviersity of Toronto, also pursuing a minor in Artificial Intelligence Engineering. 
           I have experience and interest in a lot of things software- like webdev, full-stack, and embedded systems. See my projects and experiences to see what I&apos;ve been up to. <br/><br/>
-          For fun, in addition to doing technical projects, I enjoy reffing soccer and hiking.
+          For fun, in addition to doing technical projects, I enjoy reffing, soccer, and, hiking.
         </p>
         <Link className="bg-white text-black w-4/5 md:w-1/3 mx-auto flex items-center justify-between py-2 px-16 rounded-full hover:text-white hover:bg-black border-2 border-white my-2" href='/work'>
           <div>
