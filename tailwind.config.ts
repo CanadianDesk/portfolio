@@ -13,6 +13,23 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      fontFamily: {
+        inter: ["Inter", "sans-serif"],
+      },  
+      keyframes: {
+        'underline-in': {
+          '0%': { transform: 'scaleX(0)' },
+          '100%': { transform: 'scaleX(1)' },
+        },
+        'underline-out': {
+          '0%': { transform: 'scaleX(1)' },
+          '100%': { transform: 'scaleX(0)' },
+        },
+      },
+      animation: {
+        'underline-in': 'underline-in 0.3s ease-out forwards',
+        'underline-out': 'underline-out 0.3s ease-out forwards',
+      },      
     },
   },
   plugins: [],
