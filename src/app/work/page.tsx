@@ -147,7 +147,7 @@ export default function WorkPage() {
     <div>
       <Navbar />  
       <main className="flex min-h-screen flex-col bg-black text-white">
-          <div className="flex justify-center align-middle mb-20 mt-16">
+          <div className="flex justify-center align-middle mb-20 mt-16 text-2xl">
             <button onClick={() => {setActiveTab(Tab.EXPERIENCE);}} className={`px-4 py-2 rounded-l-full ${activeTab === Tab.EXPERIENCE ? "bg-white text-black" : "bg-black"} border-2 border-white`}>experience</button>
             <button onClick={() => setActiveTab(Tab.PROJECTS)} className={`px-4 py-2 rounded-r-full ${activeTab === Tab.PROJECTS ? "bg-white text-black" : "bg-black"} border-2 border-white`}>projects</button>
           </div>

@@ -1,6 +1,6 @@
 import Navbar from "@/components/navbar";
 import Link from "next/link";
-import { MoveDown, MoveRight } from "lucide-react";
+import { MoveDown, MoveRight, Github, Linkedin, Mail } from "lucide-react";
 export default function Home() {
   return (
     <div className="relative text-white">
@@ -35,12 +35,15 @@ export default function Home() {
           socials.
         </h1>
         <div className="mx-8 font-thin mt-6 mb-32">
-          <ul className="list-disc list-inside">
-            <li>Github</li>
-            <li>LinkedIn</li>
-            <li>avinav.bhandari@mail.utoronto.ca</li>
-            <li>Discord</li>
-          </ul>
+          <a className="flex space-x-2 mb-4" href="https://github.com/CanadianDesk">
+            <Github/> <span className="underline hover:text-gray-400">Github</span>
+          </a>
+          <a className="flex space-x-2 my-4" href="https://www.linkedin.com/in/avinav-bhandari-35a4541ba/">
+            <Linkedin/> <span className="underline hover:text-gray-400">LinkedIn</span>
+          </a>
+          <a className="flex space-x-2 my-4" href="mailto:avinav.bhandari@mail.utoront.ca">
+            <Mail/> <span className="underline hover:text-gray-400">avinav.bhandari@mail.utoronto.ca</span>
+          </a>
         </div>
       </main>
       
