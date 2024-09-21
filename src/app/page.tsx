@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <div className="relative">
         <Navbar  />  
-      <main className="flex flex-col min-h-screen relative max-w-[1000px] mx-auto">
+      <main className="flex flex-col min-h-screen relative max-w-[1000px] mx-auto bg-black">
         <div className="mx-auto text-4xl font-inter font-light tracking-wider mt-[25vh] md:mt-[35vh]">
           hi, i&apos;m 
           <div className="font-bold text-8xl">avinav</div>
@@ -19,13 +19,13 @@ export default function Home() {
           I have experience and interest in a lot of things software- like webdev, full-stack, and embedded systems. See my projects and experiences to see what I&apos;ve been up to. <br/><br/>
           For fun, in addition to doing technical projects, I enjoy reffing soccer and hiking.
         </p>
-        <Link className="bg-black dark:bg-white text-white dark:text-black w-4/5 md:w-1/3 mx-auto flex items-center justify-between py-2 px-16 rounded-full hover:text-white hover:bg-black border-2 border-white my-2" href='/work'>
+        <Link className="bg-white text-black w-4/5 md:w-1/3 mx-auto flex items-center justify-between py-2 px-16 rounded-full hover:text-white hover:bg-black border-2 border-white my-2" href='/work'>
           <div>
             projects & experience 
           </div>
           <MoveRight />
         </Link>
-        <Link className="bg-black dark:bg-white text-white dark:text-black w-4/5 md:w-1/3 mx-auto flex items-center justify-between py-2 px-16 rounded-full hover:text-white hover:bg-black border-2 border-white my-2" href="/work">
+        <Link className="bg-white text-black w-4/5 md:w-1/3 mx-auto flex items-center justify-between py-2 px-16 rounded-full hover:text-white hover:bg-black border-2 border-white my-2" href='/work'>
           <div>
             contact me
           </div>

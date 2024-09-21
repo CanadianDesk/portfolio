@@ -42,7 +42,7 @@ const Navbar = () => {
 
   return (
     <nav 
-      className="w-full px-4 py-8 bg-white dark:bg-black dark:hover:bg-black text-gray-950 dark:text-white font-inter tracking-wider transition-all duration-300 ease-in-out"
+      className="w-full px-4 py-8 bg-black text-white font-inter tracking-wider transition-all duration-300 ease-in-out"
     >
       <div className="container mx-auto flex justify-center items-center">
         <div className="flex space-x-1 md:space-x-8 font-light text-base md:text-xl">
