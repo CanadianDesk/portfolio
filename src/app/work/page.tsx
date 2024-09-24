@@ -155,31 +155,33 @@ function WorkPageContent() {
     <div className="">
       <Navbar />  
       <main className="flex min-h-screen flex-col bg-black text-white mb-32">
-          <div className="flex justify-center align-middle mb-20 mt-16 text-2xl">
-            <button onClick={() => {setActiveTab(Tab.EXPERIENCE);}} className={`px-4 py-2 rounded-l-full ${activeTab === Tab.EXPERIENCE ? "bg-white text-black" : "bg-black"} border-2 border-white`}>experience</button>
-            <button onClick={() => setActiveTab(Tab.PROJECTS)} className={`px-4 py-2 rounded-r-full ${activeTab === Tab.PROJECTS ? "bg-white text-black" : "bg-black"} border-2 border-white`}>projects</button>
+          <div className="flex justify-center space-x-8 align-middle mb-20 mt-16 text-xl">
+            <button onClick={() => {setActiveTab(Tab.EXPERIENCE);}} className={`rounded-full px-4 py-2 ${activeTab === Tab.EXPERIENCE ? `bg-white text-black animate-pulse` : `bg-black text-white hover:border hover:border-white`}`}>experience</button>
+            <button onClick={() => setActiveTab(Tab.PROJECTS)} className={`rounded-full px-4 py-2 ${activeTab === Tab.PROJECTS ? `bg-white text-black animate-pulse` : `bg-black text-white hover:border hover:border-white`}`}>projects</button>
           </div>
-          <Chrono
-            items={activeTab === Tab.EXPERIENCE ? exprerienceItems : projectItems}
-            mode="VERTICAL_ALTERNATING"
-            key={activeTab}
-            theme={{
-              primary: "white",
-              secondary: "white",
-              cardBgColor: "#0f0f0f",
-              cardDetailsColor: "white",
-              cardForceColor: "white",
-              cardTitleColor: "white",
-              cardSubtitleColor: "white",
-              titleColor: "white",
-              titleColorActive: "black",
-            }}
-            disableToolbar
-            scrollable={{ scrollbar: false }}
-            highlightCardsOnHover
-          >
-            {activeTab === Tab.EXPERIENCE ? experienceContent : projectContent}
-          </Chrono>
+          <div className="flex justify-center align-middle">
+            <Chrono
+              items={activeTab === Tab.EXPERIENCE ? exprerienceItems : projectItems}
+              mode="VERTICAL_ALTERNATING"
+              key={activeTab}
+              theme={{
+                primary: "white",
+                secondary: "white",
+                cardBgColor: "#0f0f0f",
+                cardDetailsColor: "white",
+                cardForceColor: "white",
+                cardTitleColor: "white",
+                cardSubtitleColor: "white",
+                titleColor: "white",
+                titleColorActive: "black",
+              }}
+              disableToolbar
+              scrollable={{ scrollbar: false }}
+              highlightCardsOnHover
+            >
+              {activeTab === Tab.EXPERIENCE ? experienceContent : projectContent}
+            </Chrono>
+          </div>
       </main>
       <Footer />
     </div>

@@ -26,23 +26,23 @@ export default function Home() {
           </div>
           <MoveRight />
         </Link>
-        <Link className="bg-white text-black w-4/5 md:w-1/3 mx-auto flex items-center justify-between py-2 px-16 rounded-full hover:text-white hover:bg-black border-2 border-white my-2" href='/work'>
+        {/* <Link className="bg-white text-black w-4/5 md:w-1/3 mx-auto flex items-center justify-between py-2 px-16 rounded-full hover:text-white hover:bg-black border-2 border-white my-2" href='/work'>
           <div>
             contact me
           </div>
           <MoveRight />
-        </Link>
+        </Link> */}
         <h1 className="mx-8 text-4xl font-semibold mt-16">
           socials.
         </h1>
         <div className="mx-8 font-thin mt-6 mb-32">
-          <a className="flex space-x-2 mb-4" href="https://github.com/CanadianDesk">
+          <a className="flex space-x-2 mb-4" href="https://github.com/CanadianDesk" target="_blank">
             <Github/> <span className="underline hover:text-gray-400">Github</span>
           </a>
-          <a className="flex space-x-2 my-4" href="https://www.linkedin.com/in/avinav-bhandari-35a4541ba/">
+          <a className="flex space-x-2 my-4" href="https://www.linkedin.com/in/avinav-bhandari-35a4541ba/" target="_blank">
             <Linkedin/> <span className="underline hover:text-gray-400">LinkedIn</span>
           </a>
-          <a className="flex space-x-2 my-4" href="mailto:avinav.bhandari@mail.utoront.ca">
+          <a className="flex space-x-2 my-4" href="mailto:avinav.bhandari@mail.utoront.ca" target="_blank">
             <Mail/> <span className="underline hover:text-gray-400">avinav.bhandari@mail.utoronto.ca</span>
           </a>
         </div>
