@@ -25,11 +25,21 @@ const config: Config = {
           '0%': { transform: 'scaleX(1)' },
           '100%': { transform: 'scaleX(0)' },
         },
+        'border-pulse': {
+          '0%, 100%': { borderColor: 'transparent' },
+          '50%': { borderColor: 'white' },
+        },
       },
       animation: {
         'underline-in': 'underline-in 0.3s ease-out forwards',
         'underline-out': 'underline-out 0.3s ease-out forwards',
+        'border-pulse': 'border-pulse 1s ease-in-out',
       },      
+    },
+  },
+  variants: {
+    extend: {
+      animation: ['responsive', 'motion-safe', 'motion-reduce'],
     },
   },
   plugins: [],

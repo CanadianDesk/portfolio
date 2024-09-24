@@ -1,11 +1,12 @@
 "use client"; 
 
 import Navbar from "@/components/navbar";
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import dynamic from 'next/dynamic';
 import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Footer from "@/components/footer";
+import ImageDeck from "@/components/imageDeck";
 
 const Chrono = dynamic(() => import('react-chrono').then((mod) => mod.Chrono), {
   ssr: false,
@@ -17,9 +18,45 @@ enum Tab {
 }
 
 function WorkPageContent() {
-
-  const queryTab = useSearchParams().get('mode');
+  const searchParams = useSearchParams();
+  const queryTab = searchParams.get('tab');
+  const scrollTo = searchParams.get('scrollTo');
   const [activeTab, setActiveTab] = useState(queryTab == 'projects' ? Tab.PROJECTS : Tab.EXPERIENCE);
+
+  const scrollToElement = useCallback((elementId: string) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      element.classList.add('animate-pulse');
+      setTimeout(() => {
+        element.classList.remove('animate-pulse');
+      }, 5000);
+      return true;
+    }
+    return false;
+  }, []);
+
+  useEffect(() => {
+    if (scrollTo) {
+      let attempts = 0;
+      const maxAttempts = 10;
+      const attemptInterval = 500; // 500ms
+
+      const attemptScroll = () => {
+        if (scrollToElement(scrollTo)) {
+          return;
+        }
+
+        attempts++;
+        if (attempts < maxAttempts) {
+          setTimeout(attemptScroll, attemptInterval);
+        }
+      };
+
+      setTimeout(attemptScroll, 1000); // Initial delay to allow for render
+    }
+  }, [scrollTo, activeTab, scrollToElement]);
+
 
   const experienceContent = [
     <div className="text-left w-full p-4 font-inter text-white" key={null} id="draftparty2">
@@ -76,10 +113,11 @@ function WorkPageContent() {
   ];
 
   const projectContent = [
-    <div className="text-left w-full p-4 font-inter text-white" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null} id="cpu">
       <h3 className="font-bold text-xl mb-4">Complete Breadboard CPU and Custom Instruction Set</h3>
-      <img src="/png/cpu1.png" className="w-2/3 h-auto rounded-3xl mx-auto mb-2" />
-      <p className="text-sm italic flex justify-center mb-4 font-thin">ALU component of the 8-bit custom breadboard CPU</p>
+      {/* <img src="/png/cpu1.png" className="w-full md:w-2/3 h-auto rounded-3xl mx-auto mb-2" />
+      <p className="text-sm italic flex justify-center mb-4 font-thin">ALU component of the 8-bit custom breadboard CPU</p> */}
+      <ImageDeck name="cpu" />
       <div className="font-extralight">
         Designed an implemented a custom CPU on a breadboard, mainly using 74LS series ICs. This project includes:
         <ul className="list-inside list-disc pl-4 pt-2">
@@ -91,7 +129,7 @@ function WorkPageContent() {
         </ul>
       </div>
     </div>,
-    <div className="text-left w-full p-4 font-inter text-white" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null} id="krumbz">
       <h3 className="font-bold text-xl mb-4">Krumbz Recipe App: Recipe Searcher</h3>
       <div className="font-extralight">
         Created an app where users can see what recipes they can make, based on the ingredients they have. Some features include:
@@ -106,10 +144,11 @@ function WorkPageContent() {
         </ul>
       </div>
     </div>,
-    <div className="text-left w-full p-4 font-inter text-white" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null} id="niosorbit">
       <h3 className="font-bold text-xl mb-4">Rocket Projectile Simulator</h3>
-      <img src="/png/niosorbit1.png" className="w-2/3 h-auto rounded-3xl mx-auto mb-2" />
-      <p className="flex justify-center text-sm italic mb-4 font-thin">Start screen of projectile simulator game.</p>
+      {/* <img src="/png/niosorbit1.png" className="w-full md:w-2/3 h-auto rounded-3xl mx-auto mb-2" />
+      <p className="flex justify-center text-sm italic mb-4 font-thin">Start screen of projectile simulator game.</p> */}
+      <ImageDeck name="niosorbit" />
       <div className="font-extralight">
         Created a physics-accurate projectile simulator disguised as a rocket game. This was directly implemented on a soft-core processor on an FPGA, with no operating system. Some details:
         <ul className="list-inside list-disc pl-4 pt-2">
@@ -122,7 +161,20 @@ function WorkPageContent() {
         </ul>
       </div>
     </div>,
-    <div className="text-left w-full p-4 font-inter text-white" key={null}>
+    <div className="text-left w-full p-4 font-inter text-white" key={null} id="mapper">
+      <h3 className="font-bold text-xl mb-4">OpenStreetMap City Mapper</h3>
+      <div className="font-extralight">
+        Designed a city mapper application complete with a GUI and directions feature. Here are some details:
+        <ul className="list-inside list-disc pl-4 pt-2">
+          <li>written entirely in C++ for Linux</li>
+          <li>GUI developed using the gtk graphics library for C++</li>
+          <li>a map visualization complete with panning and zooming, showing streets, street names, buildings, and points of interest</li>
+          <li>used over 2 milltion data points for 10+ different cities from the OpenStreetMap API</li>
+          <li>a directions feature that implements Dijkstra&apos;s shortest path algorithm to give directions in a city between any two points</li>
+        </ul>
+      </div>
+    </div>,    
+    <div className="text-left w-full p-4 font-inter text-white" key={null} id="humanbenchmark">
       <h3 className="font-bold text-xl mb-4">FPGA Human BenchMmark Games Project</h3>
       <div className="font-extralight">
         Designed a series of interactive games inspired by <a href="https://www.humanbenchmark.com/" className="underline text-gray-400 hover:text-white">Human Benchmark</a>. 
@@ -146,6 +198,9 @@ function WorkPageContent() {
     {
       title: "Jan 2024 - May 2024",
     },
+    {
+      title: "Jan 2024 - May 2024",
+    },    
     {
       title: "Sep 2023 - Dec 2023",
     },
