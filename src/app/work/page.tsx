@@ -94,7 +94,7 @@ function WorkPageContent() {
           <li>Communicated with a team of approximately 20 people to develop avionics/software solutions to aid the successful launch of an experimental hybrid-fuelled rocket</li>
           <li>Developed a headless C/C++ Linux application that is responsible for driving signals to GPIO pins in order to actuate and read from different sensors in the fuelling system</li>
           <li>Led the development of a C++ backend application and networking solution that successfully parses thermocouple data and enables seamless data transfer over a small network</li>
-          <li>Developed Python scripts to implement GPS data parsing and storage functionality, enhancing the efficiency and accuracy of data handling processes</li>
+          <li>Developed Python scripts to implement GPS/GNSS data parsing and storage functionality, enabling reliable live tracking and storing of position telemetry from the ground</li>
           <li>Successfully placed 3rd and 2nd at Launch Canada 2023 and 2024 competitions of over 30 university teams</li>
         </ul>
       </div>
@@ -190,7 +190,7 @@ function WorkPageContent() {
         A reaction time test and chimpanzee memory test were implemented on a DE1-SoC FPGA board, built in Verilog/SystemVerilog. Some more details:
         <ul className="list-inside list-disc pl-4 pt-2">
           <li>players had to respond to green light on a VGA display by pressing a key in order to see a score on the screen</li>
-          <li>a 7-segment display shhowd the user&apos;s top score, timed in ms</li>
+          <li>a 7-segment display showed the user&apos;s top score, timed in ms</li>
           <li>drivers for the VGA display, 7-segment display, and PS/2 keyboard were written in Verilog</li>
         </ul>
       </div>
