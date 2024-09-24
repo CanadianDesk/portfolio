@@ -1,3 +1,4 @@
+import Footer from "@/components/footer";
 import Navbar from "@/components/navbar";
 
 export default function ResumePage() {
@@ -12,6 +13,7 @@ export default function ResumePage() {
           <iframe src="/pdf/resume.pdf" className="w-[90vw] h-[75vh] mx-auto"></iframe>
         </div>
       </main>
+      <Footer />
     </div>
   );
 }

@@ -27,10 +27,17 @@ body {
   }
 }
 
+.UVGmr {
+  overflow-y: visible !important;
+}
+
 .card-description::after {
   display: none !important;
+  overflow-y: visible !important;
 }
 
 .timeline-card-content {
   cursor: pointer !important;
+  overflow-y: visible !important;
+  height: fit-content !important;
 } 

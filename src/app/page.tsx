@@ -1,6 +1,7 @@
 import Navbar from "@/components/navbar";
 import Link from "next/link";
 import { MoveDown, MoveRight, Github, Linkedin, Mail } from "lucide-react";
+import Footer from "@/components/footer";
 export default function Home() {
   return (
     <div className="relative text-white">
@@ -46,7 +47,6 @@ export default function Home() {
           </a>
         </div>
       </main>
-      
     </div>
   );
 }
