@@ -3,6 +3,7 @@
 import Navbar from "@/components/navbar";
 import { useState } from "react";
 import dynamic from 'next/dynamic';
+import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Footer from "@/components/footer";
 
@@ -15,7 +16,7 @@ enum Tab {
   PROJECTS
 }
 
-export default function WorkPage() {
+function WorkPageContent() {
 
   const queryTab = useSearchParams().get('mode');
   const [activeTab, setActiveTab] = useState(queryTab == 'projects' ? Tab.PROJECTS : Tab.EXPERIENCE);
@@ -182,5 +183,13 @@ export default function WorkPage() {
       </main>
       <Footer />
     </div>
+  );
+}
+
+export default function WorkPage() {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <WorkPageContent />
+    </Suspense>
   );
 }
