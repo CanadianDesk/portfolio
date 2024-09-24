@@ -37,7 +37,7 @@ body {
 }
 
 .timeline-card-content {
-  cursor: pointer !important;
+  /* cursor: pointer !important; */
   overflow-y: visible !important;
   height: fit-content !important;
 } 

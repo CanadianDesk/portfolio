@@ -7,6 +7,7 @@ import { Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import Footer from "@/components/footer";
 import ImageDeck from "@/components/imageDeck";
+import { Github } from "lucide-react";
 
 const Chrono = dynamic(() => import('react-chrono').then((mod) => mod.Chrono), {
   ssr: false,
@@ -115,8 +116,6 @@ function WorkPageContent() {
   const projectContent = [
     <div className="text-left w-full p-4 font-inter text-white" key={null} id="cpu">
       <h3 className="font-bold text-xl mb-4">Complete Breadboard CPU and Custom Instruction Set</h3>
-      {/* <img src="/png/cpu1.png" className="w-full md:w-2/3 h-auto rounded-3xl mx-auto mb-2" />
-      <p className="text-sm italic flex justify-center mb-4 font-thin">ALU component of the 8-bit custom breadboard CPU</p> */}
       <ImageDeck name="cpu" />
       <div className="font-extralight">
         Designed an implemented a custom CPU on a breadboard, mainly using 74LS series ICs. This project includes:
@@ -145,9 +144,13 @@ function WorkPageContent() {
       </div>
     </div>,
     <div className="text-left w-full p-4 font-inter text-white" key={null} id="niosorbit">
-      <h3 className="font-bold text-xl mb-4">Rocket Projectile Simulator</h3>
-      {/* <img src="/png/niosorbit1.png" className="w-full md:w-2/3 h-auto rounded-3xl mx-auto mb-2" />
-      <p className="flex justify-center text-sm italic mb-4 font-thin">Start screen of projectile simulator game.</p> */}
+      <div className="flex flex-row justify-between items-center">
+        <h3 className="font-bold text-xl mb-4">Rocket Projectile Simulator</h3>
+        <a className="mb-4 text-xs font-light rounded-full bg-gray-500 w-fit px-4 py-2 flex flex-row justify-left items-center space-x-2 hover:bg-gray-800" href="https://github.com/CanadianDesk/nios-orbit" target="_blank">
+          <Github size={14} />
+          <span>Github</span>
+        </a>
+      </div>
       <ImageDeck name="niosorbit" />
       <div className="font-extralight">
         Created a physics-accurate projectile simulator disguised as a rocket game. This was directly implemented on a soft-core processor on an FPGA, with no operating system. Some details:
@@ -175,7 +178,13 @@ function WorkPageContent() {
       </div>
     </div>,    
     <div className="text-left w-full p-4 font-inter text-white" key={null} id="humanbenchmark">
-      <h3 className="font-bold text-xl mb-4">FPGA Human BenchMmark Games Project</h3>
+      <div className="flex flex-row justify-between items-center">
+        <h3 className="font-bold text-xl mb-4">FPGA Human Benchmark Games Project</h3>
+        <a className="mb-4 text-xs font-light rounded-full bg-gray-500 w-fit px-4 py-2 flex flex-row justify-left items-center space-x-2 hover:bg-gray-800" href="https://github.com/CanadianDesk/FPGA_human_benchmark" target="_blank">
+          <Github size={14} />
+          <span>Github</span>
+        </a>
+      </div>
       <div className="font-extralight">
         Designed a series of interactive games inspired by <a href="https://www.humanbenchmark.com/" className="underline text-gray-400 hover:text-white">Human Benchmark</a>. 
         A reaction time test and chimpanzee memory test were implemented on a DE1-SoC FPGA board, built in Verilog/SystemVerilog. Some more details:
@@ -232,7 +241,7 @@ function WorkPageContent() {
               }}
               disableToolbar
               scrollable={{ scrollbar: false }}
-              highlightCardsOnHover
+              highlightCardsOnHover={false}
             >
               {activeTab === Tab.EXPERIENCE ? experienceContent : projectContent}
             </Chrono>
