@@ -218,10 +218,10 @@ function WorkPageContent() {
   return (
     <div className="">
       <Navbar />  
-      <main className="flex min-h-screen flex-col bg-black text-white mb-32">
+      <main className="flex min-h-screen flex-col bg-black text-white mb-32 max-w-[1600px] mx-auto">
           <div className="flex justify-center space-x-8 align-middle mb-20 mt-16 text-xl">
-            <button onClick={() => {setActiveTab(Tab.EXPERIENCE);}} className={`rounded-full px-4 py-2 ${activeTab === Tab.EXPERIENCE ? `bg-white text-black animate-pulse` : `bg-black text-white hover:border hover:border-white`}`}>experience</button>
-            <button onClick={() => setActiveTab(Tab.PROJECTS)} className={`rounded-full px-4 py-2 ${activeTab === Tab.PROJECTS ? `bg-white text-black animate-pulse` : `bg-black text-white hover:border hover:border-white`}`}>projects</button>
+            <button onClick={() => {setActiveTab(Tab.EXPERIENCE);}} className={`rounded-full px-4 py-2 ${activeTab === Tab.EXPERIENCE ? `bg-white text-black animate-pulse` : `bg-black text-white hover:border hover:border-white hover:-mb-1`}`}>experience</button>
+            <button onClick={() => setActiveTab(Tab.PROJECTS)} className={`rounded-full px-4 py-2 ${activeTab === Tab.PROJECTS ? `bg-white text-black animate-pulse` : `bg-black text-white hover:border hover:border-white hover:-mb-1`}`}>projects</button>
           </div>
           <div className="flex justify-center align-middle">
             <Chrono
